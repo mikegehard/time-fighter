@@ -46,8 +46,7 @@ class Game(private val length: Long,
         }
 
         override fun onTick(millisUntilFinished: Long) {
-            val timeLeft = millisUntilFinished / 1000
-            this@Game.onTick(timeLeft)
+            this@Game.onTick(millisUntilFinished / 1000)
         }
     }
 }
