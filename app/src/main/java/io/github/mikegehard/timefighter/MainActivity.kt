@@ -9,9 +9,9 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
 
     internal lateinit var tapMeButton: Button
-    internal lateinit var gameScoreTextView: TextView
-    internal lateinit var timeLeftTextView: TextView
-    internal lateinit var game: Game
+    private lateinit var gameScoreTextView: TextView
+    private lateinit var timeLeftTextView: TextView
+    private lateinit var game: Game
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val onEnd: () -> Unit = {
-            Toast.makeText(this, getString(R.string.game_over,  game.score.toString()), Toast.LENGTH_LONG)
+            Toast.makeText(this, getString(R.string.game_over,  game.score.toString()), Toast.LENGTH_LONG).show()
         }
 
         val onReset: () -> Unit = {
